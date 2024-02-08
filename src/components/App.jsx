@@ -28,7 +28,7 @@ function App() {
           <Filters/>
         </section>
 
-        <section>
+        <section className='charactersList'>
           <CharactersList characters={characters}/>
         </section>
 

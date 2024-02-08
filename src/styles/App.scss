@@ -1,9 +1,29 @@
 @import 'core/reset.scss';
+body{
+    background-color: grey;
+}
+.charactersList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .main {
+      display: grid;
+      grid-template-columns: 20rem 1fr;
+    }
+}
 
+li {
+    list-style: none;
+}
 .card {
-    width: 2px;
+    height: 200px;
+    
 }
 
 .cards {
-    width: 5px;
+    //height: 200px;
+    //width: 200px;    
 }

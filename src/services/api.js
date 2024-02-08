@@ -8,7 +8,6 @@ const getDataFromApi =() => {
             return {
                 id: character.id,
                 name: character.name,
-                alternate_name: character.alternate_name,
                 species: character.species,
                 gender: character.gender,
                 house: character.house,
