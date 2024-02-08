@@ -8,9 +8,11 @@ function CharactersList({ characters }) {
   })
   return (
     <>
+      <section className='charactersList'>
         <ul className="cards">
           {renderCharacters}
         </ul>
+      </section>
     </>
     
   )

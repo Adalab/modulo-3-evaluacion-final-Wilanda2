@@ -2,6 +2,16 @@
 body{
     background-color: grey;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        width: 30%;
+        margin: 5px 0px 10px 0px;
+    }
+}
 .charactersList {
     display: flex;
     flex-direction: row;
