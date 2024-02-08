@@ -29,7 +29,7 @@ function App() {
         </section>
 
         <section>
-          <CharactersList/>
+          <CharactersList characters={characters}/>
         </section>
 
       </main>

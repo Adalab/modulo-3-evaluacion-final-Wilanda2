@@ -1,9 +1,16 @@
 import Character from "./Character"
 
-function CharactersList() {
+function CharactersList({ characters }) {
+  const renderCharacters = characters.map((character) => {
+    return <li className="card" key={character.id}> 
+      <Character character={character}/>
+    </li>
+  })
   return (
     <>
-        <Character/>
+        <ul className="cards">
+          {renderCharacters}
+        </ul>
     </>
     
   )
