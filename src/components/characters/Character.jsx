@@ -7,12 +7,14 @@ function Character({ character }) {
       <img className="card" src={character.image || sampleImg} alt={`${character.name}'s picture`} />
       <h4 className="charDesc">{character.name}</h4>
       <h4 className="charDesc">{character.species}</h4>
-      </div>
+    </div>
   )
 }
 
-Character.propTypes = {
+ Character.propTypes = {
   character: PropTypes.object
-}
+ }
+
+
 
 export default Character
