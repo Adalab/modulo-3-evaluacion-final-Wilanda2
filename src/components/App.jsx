@@ -11,7 +11,7 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("")
-  const [filterHouse, setFilterHouse] = useState ([])
+  const [filterHouse, setFilterHouse] = useState ("")
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
@@ -23,10 +23,14 @@ function App() {
     setFilterCharacter(value)
   }
 
+  const handleFilterHouse = (value) => {
+    setFilterHouse(value)
+  }
+
   //las funciones de filtros en sí
   const filteredCharacters = characters
-    //LOCALIZADO EL ERROR.filter((character) => character.name.toLowercase().includes(filterCharacter))
-
+  .filter((character) => character.name.toLowerCase().includes(filterCharacter))
+  .filter((character) => character.house.includes(filterHouse))
 
 
   //datos y constantes para las rutas
@@ -44,7 +48,7 @@ function App() {
         
           <Route path="/" element={
             <>
-                <Filters filterCharacter={filterCharacter} handleFilterCharacter={handleFilterCharacter}/>
+                <Filters filterCharacter={filterCharacter} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse}/>
               
                 <CharactersList characters={filteredCharacters}/>
             </>
