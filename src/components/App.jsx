@@ -12,6 +12,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("")
   const [filterHouse, setFilterHouse] = useState ("")
+  
 
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
@@ -34,21 +35,7 @@ function App() {
   .filter((character) => character.house.includes(filterHouse))
 
 
-  //Esto iría en el detail
-  //if (character.alive === true && gender === female) {
-  // return <p>"Viva"</p>
-  //} else if (character.alive === false && gender === female) {
-  // return <p>"Muerta"</p>
-  //} else if (character.alive === true && gender === male) {
-  // return <p>"Vivo"</p>
-  //} else if (character.alive === false && gender === male) {
-  // return <p>"Muerto"</p>
-  //}
 
-  //Más simple: if (character.alive === true ) {
-  // return <p>"Con vida"</p>
-  //} else if (character.alive === false) {
-  // return <p>"En el más allá"</p>
 
 
   //datos y constantes para las rutas. usamos matchPath(), permite validar si la ruta que quieres renderizar cumple con un patrón dado. Pathname necesita dos parámetros, la ruta dinámica y la ruta en la que estás, es un comparador de dos cosas que deben coincidir, match.
@@ -78,7 +65,7 @@ function App() {
             </>
           } />
 
-          <Route path="/character/:idCharacter" element={<CharacterDetail character={characterData}/>}/>
+          <Route path="/character/:idCharacter" element={<CharacterDetail character={characterData} characters={filteredCharacters}/>}/>
 
       </Routes>
     </>
