@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 function FilterByCharacter( {filterCharacter, handleFilterCharacter} ) {
 
@@ -15,6 +15,11 @@ function FilterByCharacter( {filterCharacter, handleFilterCharacter} ) {
         
     </>
   )
+}
+
+FilterByCharacter.propTypes = {
+  filterCharacter: PropTypes.string,
+  handleFilterCharacter: PropTypes.func
 }
 
 export default FilterByCharacter

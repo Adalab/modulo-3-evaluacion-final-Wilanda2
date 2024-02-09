@@ -37,8 +37,8 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Harry Potter</h1>
+      <header className='title'>
+        <img src="./title.png" alt="" />
       </header>
       <Routes>
         

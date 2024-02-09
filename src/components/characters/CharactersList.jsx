@@ -1,15 +1,16 @@
 import Character from "./Character"
+import PropTypes from "prop-types";
 
 function CharactersList({ characters }) {
   const renderCharacters = characters.map((character) => {
-    return <li key={character.id}> 
+    return <li className="li" key={character.id}> 
       <Character character={character}/>
     </li>
   })
   return (
     <>
-      <section className='charactersList'>
-        <ul className="cards">
+      <section>
+        <ul className="charactersList">
           {renderCharacters}
         </ul>
       </section>
@@ -18,4 +19,7 @@ function CharactersList({ characters }) {
   )
 }
 
+CharactersList.propTypes = {
+  characters: PropTypes.array
+}
 export default CharactersList

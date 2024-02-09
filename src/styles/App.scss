@@ -3,6 +3,11 @@ body{
     background-color: grey;
 }
 
+
+.title {
+    text-align: center;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -15,6 +20,7 @@ body{
 .charactersList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -25,15 +31,21 @@ body{
     }
 }
 
-li {
+.li {
     list-style: none;
+    margin-bottom: 20px;
 }
 .card {
     height: 200px;
-    
+    width: 150px;
+    margin: 0px 20px;
+    object-fit: cover;
+    border: solid 5px goldenrod;
+    border-radius: 5px;
+}
+.charDesc {
+    margin-left: 20px;
+    text-align: center;
 }
 
-.cards {
-    //height: 200px;
-    //width: 200px;    
-}
+
