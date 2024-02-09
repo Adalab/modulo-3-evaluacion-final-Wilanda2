@@ -12,10 +12,14 @@ const getDataFromApi =() => {
                 gender: character.gender,
                 house: character.house,
                 alive: character.alive,
-                image: character.image
+                image: character.image,
+                
             }
+            
         })
         return cleanData;
+        
+        
     })
 }
 

@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 function CharacterDetail( {character} ) {
 
     const sampleImg = "https://tetoncounty.librarycalendar.com/sites/default/files/2023-10/Harry%20Potter%20trivia%20icon.png ";
-    const aliveIcon = <i className="fa-solid fa-heart-pulse"></i>
-    const deadIcon = `<i className="fa-solid fa-ghost"></i>`;
-    const personIcon = `<i className="fa-solid fa-user"></i>`;
-    const creatureIcon = <i className="fa-solid fa-paw"></i>;
-
-
+    // const aliveIcon = <i className="fa-solid fa-heart-pulse"></i>
+    // const deadIcon = `<i className="fa-solid fa-ghost"></i>`;
+    // const personIcon = `<i className="fa-solid fa-user"></i>`;
+    // const creatureIcon = <i className="fa-solid fa-paw"></i>;
+//lo intenté poner con esta sintaxis
+   // ${creatureIcon}
     //PLANTEAMIENTOS DE LAS VALIDACIONES DE LOS INPUTS:
 
   //   const renderCard = <h4 className="container__detail--text">Estatus: {
@@ -38,9 +38,10 @@ function CharacterDetail( {character} ) {
         <div>
           <h4 className="container__detail--name">{character.name}</h4>
           {/* {renderCard} */}
-          <h4 className="container__detail--text">Estatus: {character.alive === true ? (`Con vida ${aliveIcon}`) : (`Ha muerto ${deadIcon}`)} </h4>
+          <h4 className="container__detail--text">Estatus: {character.alive === true ? (`Con vida ❤`) : (`Ha muerto 👻`)} </h4>
           
-          <h4 className="container__detail--text">Especie: {character.species }</h4>
+          {/* Esta validación no funciona, sale siempre criatura. Me gustaría poner un icono por cada especie, de momento tengo humana y criatura, pero hay human, ghost, werewolf, half-giant, half-human, vampire, cat, goblin, owl, poltergeist, centaur, dragon, three-headed-dog, house-elf, hippogriff, acromantula, giant */}
+          <h4 className="container__detail--text">Especie: {character.species === human ? (`Humana 🧑`) : (`Criatura 🐾`)}</h4>
           <h4 className="container__detail--text">Casa: {character.house}</h4>
       </div>
     </div>
