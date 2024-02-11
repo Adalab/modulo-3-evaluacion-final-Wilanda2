@@ -53,7 +53,7 @@ function App() {
   return (
     <>
       <header className='title'>
-        <img src="./title.png" alt="" />
+        <img src="./title.png" alt="Harry Potter" />
       </header>
       <Routes>
         

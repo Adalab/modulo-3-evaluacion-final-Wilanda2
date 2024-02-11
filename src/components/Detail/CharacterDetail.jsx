@@ -3,33 +3,91 @@ import PropTypes from "prop-types";
 function CharacterDetail( {character} ) {
 
     const sampleImg = "https://tetoncounty.librarycalendar.com/sites/default/files/2023-10/Harry%20Potter%20trivia%20icon.png ";
-    // const aliveIcon = <i className="fa-solid fa-heart-pulse"></i>
-    // const deadIcon = `<i className="fa-solid fa-ghost"></i>`;
-    // const personIcon = `<i className="fa-solid fa-user"></i>`;
-    // const creatureIcon = <i className="fa-solid fa-paw"></i>;
-//lo intenté poner con esta sintaxis
-   // ${creatureIcon}
-    //PLANTEAMIENTOS DE LAS VALIDACIONES DE LOS INPUTS:
+    
 
-  //   const renderCard = <h4 className="container__detail--text">Estatus: {
-  //     if (character.alive === true && character.gender === female) 
-  //     return <h4 className="container__detail--text">Estatus: Viva <i className="fa-solid fa-heart-pulse"></i></h4>
-  //  else if (character.alive === false && character.gender === female) character.alive} <i className="fa-solid fa-heart-pulse"></i></h4>
+    const renderStatus = () => {
+    if (character.alive === true && character.gender === "female") {
+        return <h4 className="container__detail--text">Estatus: Viva <i className="fa-solid fa-heart-pulse"></i></h4>
+    } else if (character.alive === false && character.gender === "female") {
+        return <h4 className="container__detail--text">Estatus: Muerta <i className="fa-solid fa-skull"></i></h4>
+    } else if (character.alive === true && character.gender === "male") {
+        return <h4 className="container__detail--text">Estatus: Vivo <i className="fa-solid fa-heart-pulse"></i></h4>
+    } else if (character.alive === false && character.gender === "male") {
+        return <h4 className="container__detail--text">Estatus: Muerto <i className="fa-solid fa-skull"></i></h4>
+    } 
+  }
 
-  
+    const renderSpecies = () => {
+      if (character.species === "human" && character.gender === "female") {
+        return <h4 className="container__detail--text">Especie: Humana <i className="fa-solid fa-user"></i></h4>
+    } else if (character.species === "human" && character.gender === "male") {
+        return <h4 className="container__detail--text">Especie: Humano <i className="fa-solid fa-user"></i></h4>
+    } else if (character.species === "ghost") {
+        return <h4 className="container__detail--text">Especie: Fantasma 👻</h4>
+    } else if (character.species === "werewolf") {
+        return <h4 className="container__detail--text">Especie: Hombre lobo 🐺</h4>
+    } else if (character.species === "half-giant") {
+        return <h4 className="container__detail--text">Especie: Semigigante 💁</h4>
+    } else if (character.species === "giant") {
+        return <h4 className="container__detail--text">Especie: Semigigante 🙋‍♀️</h4>
+    } else if (character.species === "half-human") {
+        return <h4 className="container__detail--text">Especie: Semihumano 🙅‍♀️</h4>
+    } else if (character.species === "vampire") {
+        return <h4 className="container__detail--text">Especie: Vampiro 🧛‍♀️</h4>
+    } else if (character.species === "cat") {
+        return <h4 className="container__detail--text">Especie: Gato 🐱</h4>
+    } else if (character.species === "goblin") {
+      return <h4 className="container__detail--text">Especie: Gnomo 😈 </h4>
+    } else if (character.species === "owl") {
+      return <h4 className="container__detail--text">Especie: Lechuza 🦉</h4>
+    } else if (character.species === "poltergeist") {
+      return <h4 className="container__detail--text">Especie: Poltergeist 👾</h4>
+    } else if (character.species === "centaur") {
+      return <h4 className="container__detail--text">Especie: Centauro 🏹</h4>
+    } else if (character.species === "dragon") {
+      return <h4 className="container__detail--text">Especie: Dragón 🐉</h4>
+    } else if (character.species === "three-headed-dog") {
+      return <h4 className="container__detail--text">Especie: Perro de tres cabezas 🐶🐶🐶</h4>
+    } else if (character.species === "house-elf") {
+      return <h4 className="container__detail--text">Especie: Elfo doméstico 🧝‍♂️</h4>
+    } else if (character.species === "hippogriff") {
+      return <h4 className="container__detail--text">Especie: Hipogrifo 🦅</h4>
+    } else if (character.species === "acromantula") {
+      return <h4 className="container__detail--text">Especie: Acromántula 🕷</h4>
+    }
+  }
 
-    // if (character.alive === true && character.gender === female) {
-    //     return <h4 className="container__detail--text">Estatus: Viva <i className="fa-solid fa-heart-pulse"></i></h4>
-    // } else if (character.alive === false && character.gender === female) {
-    //     return <h4 className="container__detail--text">Estatus: Muerta <i className="fa-solid fa-ghost"></i></h4>
-    // } else if (character.alive === true && character.gender === male) {
-    //     return <h4 className="container__detail--text">Estatus: Vivo <i className="fa-solid fa-heart-pulse"></i></h4>
-    // } else if (character.alive === false && character.gender === male) {
-    //   return <h4 className="container__detail--text">Estatus: Muerto <i className="fa-solid fa-ghost"></i></h4>
-    // }
-  
-   //
-   //
+  const renderHouse = () => {
+    if (character.house === "Gryffindor") {
+      return (
+        <div className="house">
+        <h4 className="container__detail--text">Casa: Gryffindor</h4>
+        <img src="gryffindor.jpg" alt="Emblema de Gryffindor" className="emblem"/>
+        </div> 
+        )
+    } else if (character.house === "Slytherin") {
+      return (
+      <div className="house">
+      <h4 className="container__detail--text">Casa: Slytherin</h4>
+      <img src="slytherin.jpg" alt="Emblema de Slytherin" className="emblem"/>
+      </div> 
+      )
+    } else if (character.house === "Hufflepuff") {
+      return (
+      <div className="house">
+      <h4 className="container__detail--text">Casa: Hufflepuff</h4>
+      <img src="hufflepuff.jpg" alt="Emblema de Hufflepuff" className="emblem"/>
+      </div> 
+      )
+  } else if (character.house === "Ravenclaw") {
+    return (
+    <div className="house">
+    <h4 className="container__detail--text">Casa: Ravenclaw</h4>
+    <img src="ravenclaw.jpg" alt="Emblema de Ravenclaw" className="emblem"/>
+    </div> 
+    )
+  }
+}
   return (
     <>
     <h4 className="back"><i className="fa-solid fa-dragon fa-flip-horizontal"></i> Volver</h4>
@@ -37,35 +95,17 @@ function CharacterDetail( {character} ) {
       <img className="container__detail" src={character.image || sampleImg} alt={`${character.name}'s picture`} />
         <div>
           <h4 className="container__detail--name">{character.name}</h4>
-          {/* {renderCard} */}
-          <h4 className="container__detail--text">Estatus: {character.alive === true ? (`Con vida ❤`) : (`Ha muerto 👻`)} </h4>
-          
-          {/* Esta validación no funciona, sale siempre criatura. Me gustaría poner un icono por cada especie, de momento tengo humana y criatura, pero hay human, ghost, werewolf, half-giant, half-human, vampire, cat, goblin, owl, poltergeist, centaur, dragon, three-headed-dog, house-elf, hippogriff, acromantula, giant */}
-          <h4 className="container__detail--text">Especie: {character.species === human ? (`Humana 🧑`) : (`Criatura 🐾`)}</h4>
-          <h4 className="container__detail--text">Casa: {character.house}</h4>
+          {renderStatus()}
+          {renderSpecies()}
+          {renderHouse()}
       </div>
     </div>
     </>
   )
 }
+
 CharacterDetail.propTypes = {
     character: PropTypes.object
   }
 
 export default CharacterDetail
-
-  //Esto iría en el detail
-  //if (character.alive === true && gender === female) {
-  // return <p>"Viva"</p>
-  //} else if (character.alive === false && gender === female) {
-  // return <p>"Muerta"</p>
-  //} else if (character.alive === true && gender === male) {
-  // return <p>"Vivo"</p>
-  //} else if (character.alive === false && gender === male) {
-  // return <p>"Muerto"</p>
-  //}
-
-  //Más simple: if (character.alive === true ) {
-  // return <p>"Con vida"</p>
-  //} else if (character.alive === false) {
-  // return <p>"En el más allá"</p>

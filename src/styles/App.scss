@@ -72,6 +72,16 @@ body{
     
   }  
 }
+
+.house {
+    display: flex;
+    flex-direction: row;
+}
+.emblem {
+    height: 30px;
+    margin-left: 5px;
+}
+
 .card {
     height: 200px;
     width: 150px;
