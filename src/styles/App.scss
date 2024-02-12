@@ -23,7 +23,7 @@ body{
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
         color: aliceblue;
-        margin: 10px;
+        margin: 15px;
     }
 
     &__input {
@@ -38,6 +38,17 @@ body{
     }
     ::placeholder {
         color: burlywood;
+    }
+
+    &__radio {
+        color: aliceblue;
+        //margin-right: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+
+        &--circle {
+            margin: 10px
+        }
     }
 }
 

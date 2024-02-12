@@ -12,6 +12,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterCharacter, setFilterCharacter] = useState("")
   const [filterHouse, setFilterHouse] = useState ("")
+  const [filterGender, setFiltergender] = useState("")
   
 
   useEffect(() => {
@@ -29,10 +30,25 @@ function App() {
     setFilterHouse(value)
   }
 
+  const handleFilterGender = (value) => {
+    setFiltergender(value)
+  }
+
   //las funciones de filtros en sí
   const filteredCharacters = characters
   .filter((character) => character.name.toLowerCase().includes(filterCharacter))
   .filter((character) => character.house.includes(filterHouse))
+  .filter((character) => {
+    if (filterGender === "male") {
+      return character.gender === "male"
+    } else if (filterGender === "female"){
+      return character.gender === "female"
+    } else {
+      return true
+    }
+     
+  }
+)
 
 
 
@@ -61,7 +77,7 @@ function App() {
         
           <Route path="/" element={
             <>
-                <Filters filterCharacter={filterCharacter} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse}/>
+                <Filters filterCharacter={filterCharacter} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse} filterGender={filterGender} handleFilterGender={handleFilterGender}/>
                 
                 <section className='error'>
                   {filteredCharacters.length > 0 ? (
