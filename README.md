@@ -13,8 +13,8 @@ Descubre la especie a la que pertenece cada personaje, ya sea humano, fantasma, 
 
 ¡Disfruta explorando el mundo mágico de Harry Potter y conociendo a sus fascinantes personajes! Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto.
 
-Acerca de
+#### Acerca de
 Este buscador de personajes de Harry Potter ha sido desarrollado por Wilanda2. Es una herramienta creada por fans para fans, con el objetivo de hacer que explorar el universo de Harry Potter sea aún más emocionante y divertido.
 
-Notas Legales
+#### Notas Legales 
 Esta aplicación es una creación de fans y no está afiliada de ninguna manera con J.K. Rowling, Warner Bros., o cualquier otra entidad asociada con la serie de Harry Potter. Todos los derechos de los personajes y el mundo de Harry Potter pertenecen a sus respectivos propietarios.
