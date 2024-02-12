@@ -20,41 +20,41 @@ function CharacterDetail( { character } ) {
 
     const renderSpecies = () => {
       if (character.species === "human" && character.gender === "female") {
-        return <h4 className="container__detail--text">Especie: Humana <i className="fa-solid fa-user"></i></h4>
+        return <h4 className="container__detail--text"> Humana <i className="fa-solid fa-user"></i></h4>
     } else if (character.species === "human" && character.gender === "male") {
-        return <h4 className="container__detail--text">Especie: Humano <i className="fa-solid fa-user"></i></h4>
+        return <h4 className="container__detail--text"> Humano <i className="fa-solid fa-user"></i></h4>
     } else if (character.species === "ghost") {
-        return <h4 className="container__detail--text">Especie: Fantasma 👻</h4>
+        return <h4 className="container__detail--text"> Fantasma 👻</h4>
     } else if (character.species === "werewolf") {
-        return <h4 className="container__detail--text">Especie: Hombre lobo 🐺</h4>
+        return <h4 className="container__detail--text"> Hombre lobo 🐺</h4>
     } else if (character.species === "half-giant") {
-        return <h4 className="container__detail--text">Especie: Semigigante 💁</h4>
+        return <h4 className="container__detail--text"> Semigigante 💁</h4>
     } else if (character.species === "giant") {
-        return <h4 className="container__detail--text">Especie: Semigigante 🙋‍♀️</h4>
+        return <h4 className="container__detail--text"> Gigante 🙋‍♀️</h4>
     } else if (character.species === "half-human") {
-        return <h4 className="container__detail--text">Especie: Semihumano 🙅‍♀️</h4>
+        return <h4 className="container__detail--text"> Semihumano 🙅‍♀️</h4>
     } else if (character.species === "vampire") {
-        return <h4 className="container__detail--text">Especie: Vampiro 🧛‍♀️</h4>
+        return <h4 className="container__detail--text"> Vampiro 🧛‍♀️</h4>
     } else if (character.species === "cat") {
-        return <h4 className="container__detail--text">Especie: Gato 🐱</h4>
+        return <h4 className="container__detail--text"> Gato 🐱</h4>
     } else if (character.species === "goblin") {
-      return <h4 className="container__detail--text">Especie: Gnomo 😈 </h4>
+      return <h4 className="container__detail--text"> Gnomo 😈 </h4>
     } else if (character.species === "owl") {
-      return <h4 className="container__detail--text">Especie: Lechuza 🦉</h4>
+      return <h4 className="container__detail--text"> Lechuza 🦉</h4>
     } else if (character.species === "poltergeist") {
-      return <h4 className="container__detail--text">Especie: Poltergeist 👾</h4>
+      return <h4 className="container__detail--text"> Poltergeist 👾</h4>
     } else if (character.species === "centaur") {
-      return <h4 className="container__detail--text">Especie: Centauro 🏹</h4>
+      return <h4 className="container__detail--text"> Centauro 🏹</h4>
     } else if (character.species === "dragon") {
-      return <h4 className="container__detail--text">Especie: Dragón 🐉</h4>
+      return <h4 className="container__detail--text"> Dragón 🐉</h4>
     } else if (character.species === "three-headed dog") {
-      return <h4 className="container__detail--text">Especie: Perro de tres cabezas 🐶🐶🐶</h4>
+      return <h4 className="container__detail--text"> Perro de tres cabezas 🐶🐶🐶</h4>
     } else if (character.species === "house-elf") {
-      return <h4 className="container__detail--text">Especie: Elfo doméstico 🧝‍♂️</h4>
+      return <h4 className="container__detail--text"> Elfo doméstico 🧝‍♂️</h4>
     } else if (character.species === "hippogriff") {
-      return <h4 className="container__detail--text">Especie: Hipogrifo 🦅</h4>
+      return <h4 className="container__detail--text"> Hipogrifo 🦅</h4>
     } else if (character.species === "acromantula") {
-      return <h4 className="container__detail--text">Especie: Acromántula 🕷</h4>
+      return <h4 className="container__detail--text"> Acromántula 🕷</h4>
     }
   }
 
@@ -88,19 +88,14 @@ function CharacterDetail( { character } ) {
       </div> 
     )
   }
+  else if (character.house === "") {
+    return (
+      <div className="house">
+        <h4 className="container__detail--text">Sin casa</h4>
+      </div> 
+    )
+  }
 }
-
-  // const renderWizard = () => {
-  //   if (character.wizard === true) {
-  //     return (
-  //       <h4 className="container__detail--text">Mundo: Mágico</h4>
-  //     )
-  //   } else if (character.wizard === false) {
-  //     return (
-  //       <h4 className="container__detail--text">Mundo: No mágico</h4>
-  //     )
-  //   }
-  // }
 
   
   return (
@@ -118,7 +113,6 @@ function CharacterDetail( { character } ) {
           {renderStatus()}
           {renderSpecies()}
           {renderHouse()}
-          {/* {renderWizard()} */}
       </div>
     </div>
     </>
@@ -127,7 +121,6 @@ function CharacterDetail( { character } ) {
 
 CharacterDetail.propTypes = {
     character: PropTypes.object
-    //renderSpecies: PropTypes.func
   }
 
 export default CharacterDetail

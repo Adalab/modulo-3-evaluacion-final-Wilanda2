@@ -4,7 +4,7 @@ import getDataFromApi from "../services/api"
 import { useState, useEffect} from 'react';
 import Filters from './filters/Filters';
 import CharactersList from './characters/CharactersList';
-import { Route, Routes, matchPath, useLocation } from 'react-router-dom';
+import { Link, Route, Routes, matchPath, useLocation } from 'react-router-dom';
 import CharacterDetail from './Detail/CharacterDetail';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
       setCharacters(cleanData)
-      // setFilterHouse("Gryffindor")
+      setFilterHouse("Gryffindor")
     })
   }, [])
 
@@ -52,16 +52,24 @@ function App() {
 
   return (
     <>
+    <Link to= "/">
       <header className='title'>
         <img src="./title.png" alt="Harry Potter" className='title__img'/>
       </header>
+    </Link>
       <Routes>
         
           <Route path="/" element={
             <>
                 <Filters filterCharacter={filterCharacter} handleFilterCharacter={handleFilterCharacter} handleFilterHouse={handleFilterHouse}/>
-              
-                <CharactersList characters={filteredCharacters}/>
+                
+                <section className='error'>
+                  {filteredCharacters.length > 0 ? (
+                  <CharactersList characters={filteredCharacters}/>
+                  ) : (
+                    `No hay coincidencias con ${filterCharacter}.`
+                  )}
+                </section>               
             </>
           } />
 

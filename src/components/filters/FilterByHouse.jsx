@@ -7,13 +7,16 @@ function FilterByHouse({ handleFilterHouse }) {
     }
   return (
     <>
+    <fieldset>
         <label className="form__label">Buscar por casa</label>
         <select name="house" id="house" className="form__input" onChange={handleSelect}>
             <option value="Gryffindor">Gryffindor</option>
             <option value="Slytherin">Slytherin</option>
-            <option value="Hufflepuff">Hufflepuff</option>
+            <option value="Hufflepuff" >Hufflepuff</option>
             <option value="Ravenclaw">Ravenclaw</option>
+            <option value="">Todos los personajes</option>
         </select>
+    </fieldset>
     </>
     )
 }

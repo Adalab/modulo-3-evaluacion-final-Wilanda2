@@ -10,13 +10,14 @@ function CharactersList({ characters }) {
       </Link>
     </li>
   })
+
   return (
     <>
-      <section>
+      
         <ul className="charactersList">
           {renderCharacters}
         </ul>
-      </section>
+      
     </>
     
   )

@@ -27,7 +27,7 @@ body{
     }
 
     &__input {
-        width: 30%;
+        width: 50%;
         margin: 5px 0px 10px 0px;
         background-color: grey;
         color: aliceblue;
@@ -40,6 +40,11 @@ body{
         color: burlywood;
     }
 }
+
+fieldset {
+    border: none;
+    width: 800px;
+}
 .charactersList {
     display: flex;
     flex-direction: row;
@@ -47,12 +52,12 @@ body{
     justify-content: center;
     align-items: center;
 }
-@media (min-width: 768px) {
-    .main {
-      display: grid;
-      grid-template-columns: 20rem 1fr;
-    }
-}
+// @media (min-width: 768px) {
+//     .main {
+//       display: grid;
+//       grid-template-columns: 20rem 1fr;
+//     }
+// }
 
 .li {
     list-style: none;
@@ -127,7 +132,16 @@ body{
     color: aliceblue;
     font-family: 'Roboto', sans-serif;
     text-align: left;
+    padding: 10px;
+
 
 }
+
+  .error {
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+//    font-size: 20px;
+//     text-align: justify;
+  }
 
 
