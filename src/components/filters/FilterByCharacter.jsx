@@ -7,10 +7,10 @@ function FilterByCharacter( {filterCharacter, handleFilterCharacter} ) {
     }
   return (
     <>
-        <label>
+        <label className="form__label">
             Buscar por personaje
         </label>
-        <input type="text" className="form__input" placeholder="Harry Potter" value={filterCharacter} onChange={handleChange}/>
+        <input type="text" className="form__input" placeholder="Ej.: Harry Potter" value={filterCharacter} onChange={handleChange}/>
         
         
     </>

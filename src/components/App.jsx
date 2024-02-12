@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     getDataFromApi().then((cleanData) => {
       setCharacters(cleanData)
-      setFilterHouse("Gryffindor")
+      // setFilterHouse("Gryffindor")
     })
   }, [])
 
@@ -53,7 +53,7 @@ function App() {
   return (
     <>
       <header className='title'>
-        <img src="./title.png" alt="Harry Potter" />
+        <img src="./title.png" alt="Harry Potter" className='title__img'/>
       </header>
       <Routes>
         

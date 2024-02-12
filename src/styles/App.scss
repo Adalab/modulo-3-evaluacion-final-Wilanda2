@@ -6,15 +6,38 @@ body{
 
 .title {
     text-align: center;
+    
+    &__img {
+        width: 300px;
+    }
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+
+    &__label {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        color: aliceblue;
+        margin: 10px;
+    }
 
     &__input {
         width: 30%;
         margin: 5px 0px 10px 0px;
+        background-color: grey;
+        color: aliceblue;
+        border: goldenrod solid 2px;
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+    }
+    ::placeholder {
+        color: burlywood;
     }
 }
 .charactersList {
@@ -33,44 +56,55 @@ body{
 
 .li {
     list-style: none;
-    margin-bottom: 20px;
-    text-decoration: none;
+        
+    &__element {
+        margin: 10px;    
+    }
+
+    &__title {
+        text-decoration: none;
+    }
 }
 
 .back {
-    color: aliceblue;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 540px;
+    text-decoration: none;
+
+    &__title {
+        color: aliceblue;
+        font-family: 'Roboto', sans-serif;
+        padding-left: 540px;
+    }
 }
 .container {
     display: flex;
+    //justify-content: center;
+    align-items: center;
     margin: 10px;
-    padding: 10px;
-    width: 600px;
+    padding: 15px;
+    width: 650px;
     color: aliceblue;
     background-color: rgb(117, 42, 42);
     
-  &__detail {
-    height: 300px;
-    width: 200px;
-    margin: 0px 20px;
-    object-fit: cover;
-    border: solid 5px goldenrod;
-    border-radius: 5px;
+    &__detail {
+        height: 300px;
+        width: 200px;
+        margin: 0px 20px;
+        object-fit: cover;
+        border: solid 5px goldenrod;
+        border-radius: 5px;
 
     &--name {
         font-family: 'Roboto Slab', serif;
         font-size: 30px;
         line-height: 2.5;
-    }
+        }
     
     &--text {
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
         line-height: 1.5;
-    }
-    
-  }  
+        }
+    }  
 }
 
 .house {
@@ -83,17 +117,17 @@ body{
 }
 
 .card {
-    height: 200px;
-    width: 150px;
-    margin: 0px 20px;
+    height: 230px;
+    width: 170px;
     object-fit: cover;
-    border: solid 5px goldenrod;
-    border-radius: 5px;
+    
 }
 .charDesc {
-    //margin-left: 20px;
-    text-align: center;
-    text-decoration: none;
+    background-color: goldenrod;
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+
 }
 
 

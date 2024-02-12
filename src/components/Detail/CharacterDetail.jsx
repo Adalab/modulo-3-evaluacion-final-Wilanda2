@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function CharacterDetail( {character} ) {
+function CharacterDetail( { character } ) {
 
     const sampleImg = "https://tetoncounty.librarycalendar.com/sites/default/files/2023-10/Harry%20Potter%20trivia%20icon.png ";
     
@@ -46,7 +47,7 @@ function CharacterDetail( {character} ) {
       return <h4 className="container__detail--text">Especie: Centauro 🏹</h4>
     } else if (character.species === "dragon") {
       return <h4 className="container__detail--text">Especie: Dragón 🐉</h4>
-    } else if (character.species === "three-headed-dog") {
+    } else if (character.species === "three-headed dog") {
       return <h4 className="container__detail--text">Especie: Perro de tres cabezas 🐶🐶🐶</h4>
     } else if (character.species === "house-elf") {
       return <h4 className="container__detail--text">Especie: Elfo doméstico 🧝‍♂️</h4>
@@ -61,36 +62,55 @@ function CharacterDetail( {character} ) {
     if (character.house === "Gryffindor") {
       return (
         <div className="house">
-        <h4 className="container__detail--text">Casa: Gryffindor</h4>
-        <img src="gryffindor.jpg" alt="Emblema de Gryffindor" className="emblem"/>
+          <h4 className="container__detail--text">Casa: Gryffindor</h4>
+          <img src="gryffindor.jpg" alt="Emblema de Gryffindor" className="emblem"/>
         </div> 
         )
     } else if (character.house === "Slytherin") {
       return (
-      <div className="house">
-      <h4 className="container__detail--text">Casa: Slytherin</h4>
-      <img src="slytherin.jpg" alt="Emblema de Slytherin" className="emblem"/>
-      </div> 
+        <div className="house">
+          <h4 className="container__detail--text">Casa: Slytherin</h4>
+          <img src="slytherin.jpg" alt="Emblema de Slytherin" className="emblem"/>
+        </div> 
       )
     } else if (character.house === "Hufflepuff") {
       return (
-      <div className="house">
-      <h4 className="container__detail--text">Casa: Hufflepuff</h4>
-      <img src="hufflepuff.jpg" alt="Emblema de Hufflepuff" className="emblem"/>
-      </div> 
+        <div className="house">
+          <h4 className="container__detail--text">Casa: Hufflepuff</h4>
+          <img src="hufflepuff.jpg" alt="Emblema de Hufflepuff" className="emblem"/>
+        </div> 
       )
   } else if (character.house === "Ravenclaw") {
     return (
-    <div className="house">
-    <h4 className="container__detail--text">Casa: Ravenclaw</h4>
-    <img src="ravenclaw.jpg" alt="Emblema de Ravenclaw" className="emblem"/>
-    </div> 
+      <div className="house">
+        <h4 className="container__detail--text">Casa: Ravenclaw</h4>
+        <img src="ravenclaw.jpg" alt="Emblema de Ravenclaw" className="emblem"/>
+      </div> 
     )
   }
 }
+
+  // const renderWizard = () => {
+  //   if (character.wizard === true) {
+  //     return (
+  //       <h4 className="container__detail--text">Mundo: Mágico</h4>
+  //     )
+  //   } else if (character.wizard === false) {
+  //     return (
+  //       <h4 className="container__detail--text">Mundo: No mágico</h4>
+  //     )
+  //   }
+  // }
+
+  
   return (
     <>
-    <h4 className="back"><i className="fa-solid fa-dragon fa-flip-horizontal"></i> Volver</h4>
+    {
+      <Link to="/" className="back">
+        <h4 className="back__title"><i className="fa-solid fa-dragon fa-flip-horizontal"></i> Volver</h4>
+      </Link>
+    }
+    
     <div className="container">
       <img className="container__detail" src={character.image || sampleImg} alt={`${character.name}'s picture`} />
         <div>
@@ -98,6 +118,7 @@ function CharacterDetail( {character} ) {
           {renderStatus()}
           {renderSpecies()}
           {renderHouse()}
+          {/* {renderWizard()} */}
       </div>
     </div>
     </>
@@ -106,6 +127,7 @@ function CharacterDetail( {character} ) {
 
 CharacterDetail.propTypes = {
     character: PropTypes.object
+    //renderSpecies: PropTypes.func
   }
 
 export default CharacterDetail
